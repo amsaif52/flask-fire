@@ -38,7 +38,11 @@ def ogauth():
         print(payload)
         print(headers)
         response = requests.request("POST", url, headers=headers, data=payload)
-        return response.text
+        print(response.status_code)
+        if response:
+            return response.text, 200
+        else:
+            return 'Error', 400
     else:
         return 'Working'
 
