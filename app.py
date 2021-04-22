@@ -6,12 +6,9 @@ import requests
 import json
 
 app = Flask(__name__)
-cors = CORS(app)
-
-app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/ogauth',methods = ['POST', 'GET'])
-@cross_origin
+@cross_origin()
 def ogauth():
     if request.method == 'POST':
         BLOCK_SIZE = 16
