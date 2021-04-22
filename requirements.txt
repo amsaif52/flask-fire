@@ -7,6 +7,7 @@ idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
+pybase64==1.1.4
 pycryptodome==3.10.1
 pyngrok==5.0.5
 PyYAML==5.4.1
