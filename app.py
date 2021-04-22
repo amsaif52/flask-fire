@@ -1,13 +1,17 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 import base64
 from Crypto.Cipher import AES
 import requests
 import json
 
 app = Flask(__name__)
+cors = CORS(app)
 
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/ogauth',methods = ['POST', 'GET'])
+@cross_origin
 def ogauth():
     if request.method == 'POST':
         BLOCK_SIZE = 16
